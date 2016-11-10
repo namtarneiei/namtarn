@@ -145,18 +145,21 @@ public class register_Activity extends AppCompatActivity {
 
             try {
                 JSONObject rootObj = new JSONObject(s);
-                if (rootObj.has("result")) {
+                if (rootObj.has("result")){
                     JSONObject resultObj = rootObj.getJSONObject("result");
-                    if (resultObj.getInt("result") == 1) {
-                        Toast.makeText(register_Activity.this, resultObj.getString("result_desc"), Toast.LENGTH_SHORT).show();
+                    if (resultObj.getInt("result") == 1){
+                        Toast.makeText(register_Activity.this, resultObj.getString("result_desc"),Toast.LENGTH_SHORT).show();
                         finish();
-                    } else {
-                        Toast.makeText(register_Activity.this, resultObj.getString("result_desc"), Toast.LENGTH_SHORT).show();
+                    }else{
+                        Toast.makeText(register_Activity.this, resultObj.getString("result_desc"),Toast.LENGTH_SHORT).show();
                     }
                 }
-            } catch (JSONExceptiont ex) {
+
+
+            }catch (JSONException ex) {
 
             }
+
         }
     }
 }
